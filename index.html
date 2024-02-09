@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Greeting Card</title>
+  <style>
+    body {
+      background-color: #63adb3; /* Initial background color */
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Ensure at least viewport height */
+      margin: 0;
+      background-image: none; /* Initial background image */
+    }
+
+    .card {
+      background-color: pink; /* Remove background color */
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      background-image: none; /* Initial background image */
+    }
+
+    .heart {
+      width: 100px;
+      height: 100px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png'); /* Heart symbol image */
+      background-size: cover;
+      position: relative;
+      animation: rotateHeart 4s linear infinite;
+    }
+
+    @keyframes rotateHeart {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .animated-name {
+      color: #ff4d6d; /* Initial color */
+      font-family: 'Arial', sans-serif;
+      font-size: 32px;
+      margin-top: 20px;
+      animation: colorChange 5s infinite; /* Animation for color change */
+    }
+
+    @keyframes colorChange {
+      0% {
+        color: #08f400; /* Initial color */
+      }
+      50% {
+        color: #4d79ff; /* Intermediate color */
+      }
+      100% {
+        color: #02e3f4; /* Final color */
+      }
+    }
+
+    .celebration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allow click-through */
+    }
+
+    .confetti {
+      background-image: url(''); /* Confetti image */
+      background-size: cover;
+      animation: confettiAnimation 4s linear infinite;
+    }
+
+    .sparkles {
+      background-image: url('sparkles.png'); /* Sparkles image */
+      background-size: cover;
+      animation: sparklesAnimation 4s linear infinite;
+    }
+
+    @keyframes confettiAnimation {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes sparklesAnimation {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    button {
+      margin-top: 20px; /* Add space between button and card */
+      background-color: rgb(217, 5, 250);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="celebration confetti"></div>
+    <div class="celebration sparkles"></div>
+    <div class="heart"></div>
+    <h1 class="animated-name">Happy Valentine's Day!</h1>
+  </div>
+  <button onclick="celebrate()">Click Here</button>
+
+  <script>
+    function celebrate() {
+      const body = document.body;
+      const card = document.querySelector('.card');
+      const name = document.getElementsByClassName('animated-name')
+    //   document.getElementsByTagName("button").style.background-color=
+      
+      body.style.backgroundImage = 'url("https://media.tenor.com/pkqQze73yOoAAAAM/confetti-sticker.gif")'; // Set background image for body
+      card.style.backgroundImage = 'url("https://media.tenor.com/7aDvmYYuzIMAAAAM/stars-pink.gif")'; // Set background image for card
+      name.style.color = red;
+    }
+  </script>
+</body>
+</html>
